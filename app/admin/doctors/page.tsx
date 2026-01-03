@@ -7,8 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
-const DOCTORS_API = "http://localhost:8080/api/doctors";
-const DELETE_DOCTOR_API = "http://localhost:8080/admin/doctor"; // Assuming DELETE endpoint follows rest or specific path
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+const DOCTORS_API = `${API_BASE}/api/doctors`;
+const DELETE_DOCTOR_API = `${API_BASE}/admin/doctor`;
 
 // Checking DeleteDoctor.jsx from original... 
 // It fetches `http://localhost:8080/admin/doctor/${doctorId}` method DELETE?
@@ -51,7 +52,7 @@ export default function DoctorsPage() {
 
         try {
             // Trying likely endpoint based on CreateDoctor
-            const response = await fetch(`http://localhost:8080/admin/doctor/${docId}`, {
+            const response = await fetch(`${DELETE_DOCTOR_API}/${docId}`, {
                 method: "DELETE",
             });
             if (response.ok) {

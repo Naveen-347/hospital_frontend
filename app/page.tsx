@@ -21,7 +21,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-const API_URL = "http://localhost:8080/api/users/register";
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080") + "/api/users/register";
 
 export default function RegistrationForm() {
   const router = useRouter();

@@ -25,9 +25,10 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-const DOCTOR_API_BASE = "http://localhost:8080/api/doctors";
-const APPOINTMENT_API_BASE = "http://localhost:8080/appointments/doctor";
-const PRESCRIPTION_API = "http://localhost:8080/prescriptions/write";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+const DOCTOR_API_BASE = `${API_BASE}/api/doctors`;
+const APPOINTMENT_API_BASE = `${API_BASE}/appointments/doctor`;
+const PRESCRIPTION_API = `${API_BASE}/prescriptions/write`;
 
 export default function DoctorDashboard() {
     const router = useRouter();

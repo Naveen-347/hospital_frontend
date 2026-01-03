@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
-const ADMIN_USER_API = "http://localhost:8080/admin/users";
+const ADMIN_USER_API = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080") + "/admin/users";
 
 export default function CreateUserPage() {
     const router = useRouter();

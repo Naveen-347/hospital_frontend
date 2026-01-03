@@ -20,10 +20,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-const DOCTOR_API = "http://localhost:8080/api/doctors";
-const APPOINTMENT_API = "http://localhost:8080/appointments/book";
-const USER_APPOINTMENT_API = "http://localhost:8080/appointments/user";
-const PRESCRIPTION_API = "http://localhost:8080/prescriptions/user";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+const DOCTOR_API = `${API_BASE}/api/doctors`;
+const APPOINTMENT_API = `${API_BASE}/appointments/book`;
+const USER_APPOINTMENT_API = `${API_BASE}/appointments/user`;
+const PRESCRIPTION_API = `${API_BASE}/prescriptions/user`;
 
 type Doctor = {
     docid: number;
