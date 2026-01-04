@@ -25,7 +25,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://hospital-backend-7.onrender.com";
 const DOCTOR_API_BASE = `${API_BASE}/api/doctors`;
 const APPOINTMENT_API_BASE = `${API_BASE}/appointments/doctor`;
 const PRESCRIPTION_API = `${API_BASE}/prescriptions/write`;

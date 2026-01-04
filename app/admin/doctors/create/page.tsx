@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
-const ADMIN_DOCTOR_API = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080") + "/admin/doctor";
+const ADMIN_DOCTOR_API = (process.env.NEXT_PUBLIC_API_URL || "https://hospital-backend-7.onrender.com") + "/admin/doctor";
 
 export default function CreateDoctorPage() {
     const router = useRouter();

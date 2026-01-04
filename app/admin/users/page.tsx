@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
-const USERS_API = (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080") + "/admin/users";
+const USERS_API = (process.env.NEXT_PUBLIC_API_URL || "https://hospital-backend-7.onrender.com") + "/admin/users";
 
 export default function UsersPage() {
     const [users, setUsers] = useState<any[]>([]);
