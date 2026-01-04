@@ -1,74 +1,87 @@
 "use client";
 
 import React from "react";
-import { usePathname } from "next/navigation";
-import { HeartPulse, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { HeartPulse, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, ArrowRight } from "lucide-react";
 
 export default function Footer() {
-    const pathname = usePathname();
-
     return (
-        <footer className="bg-slate-50 text-slate-600 py-12 border-t border-slate-200">
-            <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div className="space-y-4">
-                    <div className="flex items-center gap-2 text-slate-900">
-                        <div className="h-8 w-8 bg-blue-600 text-white rounded-lg flex items-center justify-center">
-                            <HeartPulse className="h-5 w-5" />
+        <footer className="bg-slate-900 text-slate-300 py-16 border-t border-slate-800">
+            <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div className="space-y-6">
+                    <div className="flex items-center gap-2.5 text-white">
+                        <div className="h-10 w-10 bg-gradient-to-br from-primary to-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                            <HeartPulse className="h-6 w-6" />
                         </div>
-                        <span className="font-bold text-xl tracking-tight">HospitalCare</span>
+                        <span className="font-bold text-2xl tracking-tight">Hospital<span className="text-primary">Care</span></span>
                     </div>
-                    <p className="text-sm leading-relaxed text-slate-500">
-                        Compassionate Care, Advanced Medicine, Close to Home. We are committed to providing high-quality medical services with excellence.
+                    <p className="text-sm leading-relaxed text-slate-400">
+                        Compassionate Care, Advanced Medicine, Close to Home. We are committed to providing high-quality medical services with excellence and integrity.
                     </p>
+                    <div className="flex gap-4">
+                        {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
+                            <a key={i} href="#" className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all duration-300">
+                                <Icon className="h-5 w-5" />
+                            </a>
+                        ))}
+                    </div>
                 </div>
 
                 <div>
-                    <h3 className="text-slate-900 font-semibold mb-4">Quick Links</h3>
-                    <ul className="space-y-2 text-sm">
-                        <li><a href="/" className="hover:text-blue-600 transition-colors">Home</a></li>
-                        <li><a href="/about" className="hover:text-blue-600 transition-colors">About Us</a></li>
-                        <li><a href="/login-user" className="hover:text-blue-600 transition-colors">Patient Portal</a></li>
-                        <li><a href="/doctor/login" className="hover:text-blue-600 transition-colors">Doctor Portal</a></li>
+                    <h3 className="text-white font-bold text-lg mb-6">Quick Links</h3>
+                    <ul className="space-y-3">
+                        {[
+                            { label: "Home", href: "/" },
+                            { label: "About Us", href: "/about" },
+                            { label: "Patient Portal", href: "/login-user" },
+                            { label: "Doctor Portal", href: "/doctor/login" }
+                        ].map((link) => (
+                            <li key={link.label}>
+                                <a href={link.href} className="group flex items-center gap-2 hover:text-primary transition-colors">
+                                    <ArrowRight className="h-3 w-3 text-primary opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                                    {link.label}
+                                </a>
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
                 <div>
-                    <h3 className="text-slate-900 font-semibold mb-4">Services</h3>
-                    <ul className="space-y-2 text-sm">
-                        <li>Emergency Care</li>
-                        <li>Outpatient Services</li>
-                        <li>Diagnostic Lab</li>
-                        <li>Pharmacy</li>
-                        <li>Surgery</li>
+                    <h3 className="text-white font-bold text-lg mb-6">Our Services</h3>
+                    <ul className="space-y-3">
+                        {["Emergency Care", "Outpatient Services", "Diagnostic Lab", "Pharmacy", "Surgery"].map((item) => (
+                            <li key={item} className="hover:text-primary transition-colors cursor-pointer">
+                                {item}
+                            </li>
+                        ))}
                     </ul>
                 </div>
 
                 <div>
-                    <h3 className="text-slate-900 font-semibold mb-4">Contact Us</h3>
-                    <ul className="space-y-3 text-sm">
-                        <li className="flex items-start gap-3">
-                            <MapPin className="h-5 w-5 text-blue-600 shrink-0" />
-                            <span>123 Health Street, Chennai,<br />Tamil Nadu, India</span>
+                    <h3 className="text-white font-bold text-lg mb-6">Contact Info</h3>
+                    <ul className="space-y-4">
+                        <li className="flex items-start gap-4">
+                            <div className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center shrink-0 text-primary">
+                                <MapPin className="h-5 w-5" />
+                            </div>
+                            <span className="text-sm leading-relaxed">123 Health Street, Chennai,<br />Tamil Nadu, India</span>
                         </li>
-                        <li className="flex items-center gap-3">
-                            <Phone className="h-5 w-5 text-blue-600 shrink-0" />
+                        <li className="flex items-center gap-4">
+                            <div className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center shrink-0 text-primary">
+                                <Phone className="h-5 w-5" />
+                            </div>
                             <span>+91 98765 13210</span>
                         </li>
-                        <li className="flex items-center gap-3">
-                            <Mail className="h-5 w-5 text-blue-600 shrink-0" />
+                        <li className="flex items-center gap-4">
+                            <div className="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center shrink-0 text-primary">
+                                <Mail className="h-5 w-5" />
+                            </div>
                             <span>contact@hospitalcare.in</span>
                         </li>
                     </ul>
-                    <div className="flex gap-4 mt-6">
-                        <Facebook className="h-5 w-5 text-slate-400 hover:text-blue-600 cursor-pointer transition-colors" />
-                        <Twitter className="h-5 w-5 text-slate-400 hover:text-blue-600 cursor-pointer transition-colors" />
-                        <Instagram className="h-5 w-5 text-slate-400 hover:text-blue-600 cursor-pointer transition-colors" />
-                        <Linkedin className="h-5 w-5 text-slate-400 hover:text-blue-600 cursor-pointer transition-colors" />
-                    </div>
                 </div>
             </div>
-            <div className="container mx-auto px-4 mt-12 pt-8 border-t border-slate-200 text-center text-xs text-slate-500">
-                © {new Date().getFullYear()} HospitalCare. All rights reserved.
+            <div className="container mx-auto px-4 mt-16 pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+                © {new Date().getFullYear()} HospitalCare. All rights reserved. Designed for Excellence.
             </div>
         </footer>
     );

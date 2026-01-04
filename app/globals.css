@@ -24,59 +24,69 @@
 }
 
 :root {
-  --background: #f8fafc;
-  /* Slate 50 */
-  --foreground: #0f172a;
-  /* Slate 900 */
+  /* Base - Clean White/Slate Foundation */
+  --background: #ffffff;
+  --foreground: #0f172a; /* Slate 900 */
+
+  /* Cards - Slight elevation */
   --card: #ffffff;
   --card-foreground: #0f172a;
+
+  /* Popovers */
   --popover: #ffffff;
   --popover-foreground: #0f172a;
-  --primary: #0284c7;
-  /* Sky 600 - Good Hospital Blue */
-  --primary-foreground: #f0f9ff;
-  --secondary: #e0f2fe;
-  /* Sky 100 */
-  --secondary-foreground: #0c4a6e;
-  /* Sky 900 */
-  --muted: #f1f5f9;
-  /* Slate 100 */
-  --muted-foreground: #64748b;
-  /* Slate 500 */
-  --accent: #f0f9ff;
-  --accent-foreground: #0284c7;
-  --destructive: #ef4444;
-  --destructive-foreground: #fafafa;
-  --border: #e2e8f0;
-  /* Slate 200 */
+
+  /* Primary - Professional Medical Blue */
+  --primary: #0ea5e9; /* Sky 500 - Vibrant but professional */
+  --primary-foreground: #ffffff;
+
+  /* Secondary - Soft supportive presence */
+  --secondary: #f1f5f9; /* Slate 100 */
+  --secondary-foreground: #0f172a;
+
+  /* Muted - For subtle text/bg */
+  --muted: #f8fafc; /* Slate 50 */
+  --muted-foreground: #64748b; /* Slate 500 */
+
+  /* Accent - For interactive states */
+  --accent: #e0f2fe; /* Sky 100 */
+  --accent-foreground: #0284c7; /* Sky 600 */
+
+  /* Destructive - Errors/Warnings */
+  --destructive: #ef4444; /* Red 500 */
+  --destructive-foreground: #ffffff;
+
+  /* Borders & Inputs */
+  --border: #e2e8f0; /* Slate 200 */
   --input: #e2e8f0;
-  --ring: #0284c7;
-  --radius: 0.75rem;
-  /* Softer, more modern rounded corners */
+  --ring: #0ea5e9; /* Sky 500 */
+
+  /* Border Radius - Modern & Friendly */
+  --radius: 1rem; /* Rounded-2xl */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #f8fafc;
-    /* Force Light Mode for now as requested */
+    /* Keeping forced light mode as per previous file, but defining dark for potential future flip */
+    --background: #ffffff;
     --foreground: #0f172a;
     --card: #ffffff;
     --card-foreground: #0f172a;
     --popover: #ffffff;
     --popover-foreground: #0f172a;
-    --primary: #0284c7;
-    --primary-foreground: #f0f9ff;
-    --secondary: #e0f2fe;
-    --secondary-foreground: #0c4a6e;
-    --muted: #f1f5f9;
+    --primary: #0ea5e9;
+    --primary-foreground: #ffffff;
+    --secondary: #f1f5f9;
+    --secondary-foreground: #0f172a;
+    --muted: #f8fafc;
     --muted-foreground: #64748b;
-    --accent: #f0f9ff;
+    --accent: #e0f2fe;
     --accent-foreground: #0284c7;
     --destructive: #ef4444;
-    --destructive-foreground: #fafafa;
+    --destructive-foreground: #ffffff;
     --border: #e2e8f0;
     --input: #e2e8f0;
-    --ring: #0284c7;
+    --ring: #0ea5e9;
   }
 }
 
@@ -84,4 +94,13 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-outfit), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Utilities if needed later */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
