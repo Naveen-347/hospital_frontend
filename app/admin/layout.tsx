@@ -547,12 +547,20 @@ ${question}
       </main>
 
       {/* 🔥 MOBILE FLOATING AI BUTTON */}
-      <Button
-        className="fixed md:hidden bottom-6 right-6 rounded-full h-14 w-14 shadow-lg"
-        onClick={() => setAiOpen(true)}
-      >
-        <Bot />
-      </Button>
+     <Button
+  onClick={() => setAiOpen(true)}
+  className="
+    fixed md:hidden bottom-6 right-6 z-50
+    h-14 w-14 rounded-full
+    bg-gradient-to-tr from-purple-600 to-pink-600
+    shadow-lg shadow-purple-500/40
+    hover:scale-105 active:scale-95
+    transition-all duration-200
+  "
+>
+  <Bot className="h-6 w-6 text-white" />
+</Button>
+
 
       {/* 🔥 MOBILE AI PANEL */}
       <AnimatePresence>
