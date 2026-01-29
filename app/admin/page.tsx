@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Users, Stethoscope, ArrowRight, Calendar, Activity, TrendingUp } from "lucide-react";
+import { Users, Stethoscope, ArrowRight, Calendar, Activity, TrendingUp, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://hospital-backend-7.onrender.com";
@@ -121,6 +121,19 @@ export default function AdminDashboard() {
                                 </div>
                             </div>
                             <ArrowRight className="h-4 w-4 text-slate-300 group-hover:text-teal-500 group-hover:translate-x-1 transition-all" />
+                        </Link>
+
+                        <Link href="/admin/ai-feature" className="group flex items-center justify-between p-4 rounded-xl border border-slate-100 bg-slate-50 hover:bg-white hover:border-indigo-200 hover:shadow-sm transition-all">
+                            <div className="flex items-center gap-3">
+                                <div className="h-10 w-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                    <Sparkles className="h-5 w-5" />
+                                </div>
+                                <div className="flex flex-col">
+                                    <span className="font-semibold text-slate-900">AI Assistant</span>
+                                    <span className="text-xs text-slate-500">Generate medical insights</span>
+                                </div>
+                            </div>
+                            <ArrowRight className="h-4 w-4 text-slate-300 group-hover:text-indigo-500 group-hover:translate-x-1 transition-all" />
                         </Link>
                     </CardContent>
                 </Card>
